@@ -1,8 +1,6 @@
-/* место для вашего кода */
-
 /* shared styles */
 .address {
-  width: 203px;
+  max-width: 203px;
   font-style: normal;
   line-height: 24px;
   font-size: 18px;
@@ -17,7 +15,7 @@
 }
 
 body {
-  margin: 91px auto 0;
+  margin: 94px auto 48px;
 }
 
 /* header */
@@ -32,6 +30,7 @@ body {
   display: flex;
   gap: 16px;
   padding: 0;
+  list-style-position: inside;
 }
 
 .header__links-list-item {
@@ -45,7 +44,7 @@ body {
 .header__link {
   font-size: 18px;
   font-weight: 400;
-  line-height: 21.13px;
+  line-height: 21px;
   text-transform: lowercase;
   text-underline-position: under;
   color: #000000;
@@ -74,7 +73,7 @@ body {
 }
 
 .content {
-  margin-top: 93px;
+  margin-top: 90px;
   scroll-behavior: smooth;
 }
 
@@ -83,9 +82,8 @@ body {
   position: relative;
   padding: 165px 50px 50px;
   background-image: url("../images/cover.jpg");
-  background-position-x: -167px;
-  background-size: 140%;
-  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: #FFFFFF;
 }
 
@@ -96,7 +94,7 @@ body {
 }
 
 .cover__title {
-  margin-bottom: 107px;
+  margin-bottom: 137px;
   text-transform: uppercase;
 }
 
@@ -109,17 +107,31 @@ body {
   letter-spacing: 0.3em;
 }
 
+.aligned-text span {
+  display: inline-block;
+  padding-left: 29px;
+}
+
 .aligned-text_center {
   text-align: center;
-  line-height: 150px;
+  line-height: 138px;
   letter-spacing: 29px;
-  margin-right: -28px;
+  margin-left: -29px;
+}
+
+.aligned-text_center span {
+  padding-left: 33px;
 }
 
 .aligned-text_right {
   text-align: end;
   letter-spacing: 29px;
   margin-right: -28px;
+  line-height: 99px;
+}
+
+.aligned-text_right::first-letter {
+  padding-right: 33px;
 }
 
 .cover__description {
@@ -132,13 +144,14 @@ body {
   font-size: 22px;
   font-weight: 400;
   text-transform: uppercase;
-  word-spacing: 19px;
+  word-spacing: 18px;
+  margin-left: 28px;
 }
 
 .bet-button {
   cursor: pointer;
   border: 1px solid #FFFFFF;
-  padding: 10px 31px;
+  padding: 11px 32px;
   background-color: transparent;
   color: #FFFFFF;
   text-transform: uppercase;
@@ -158,18 +171,19 @@ body {
   text-transform: uppercase;
   font-size: 40px;
   font-weight: 700;
-  line-height: 46.96px;
+  line-height: 46px;
 }
 
 .lots__card-list {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
 .lots__card-list-item {
   width: 334px;
-  min-height: 596px;
+  min-height: 562px;
 }
 
 .card-link {
@@ -184,8 +198,8 @@ body {
   padding: 48px 40px;
   height: 100%;
   width: 100%;
-  background-position: -117px 0;
-  background-size: 170%;
+  background-position: center;
+  background-size: cover;
   color: #FFFFFF;
 }
 
@@ -210,7 +224,7 @@ body {
 .card__title {
   font-size: 22px;
   font-weight: 700;
-  line-height: 26.4px;
+  line-height: 26px;
   text-transform: uppercase;
   text-decoration: underline;
 }
@@ -223,21 +237,21 @@ body {
 
 .lots__look-more-link {
   display: inline-block;
-  margin-top: 33px;
+  margin-top: 31px;
   margin-left: 40px;
   text-transform: lowercase;
   font-size: 20px;
   font-weight: 400;
-  line-height: 23.48px;
+  line-height: 23px;
   text-underline-position: under;
 }
 
 /* about */
 .about {
   display: flex;
-  column-gap: 70px;
-  margin-top: 151px;
-  padding: 0 24px 0 73px;
+  column-gap: 71px;
+  margin-top: 180px;
+  padding: 0 3px 0 71px;
 }
 
 .about__logo {
@@ -251,11 +265,11 @@ body {
 }
 
 .about__title {
-  margin: 100px 0;
+  margin: 100px 0 103px;
   text-transform: uppercase;
   font-size: 40px;
   font-weight: 700;
-  line-height: 46.96px;
+  line-height: 46px;
 }
 
 .about__logo-image {
@@ -264,28 +278,44 @@ body {
 }
 
 .about__column {
-  width: 67%;
+  width: 68%;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .about__text {
-  margin-top: 25px;
   font-size: 20px;
   font-weight: 400;
 }
 
-.about__text:last-child {
-  width: 98%;
+.about__text:first-of-type {
+  word-spacing: 1px;
+}
+
+.about__text:last-of-type span {
+  word-spacing: 1px;
+  display: inline-block;
+  margin-left: 2px;
 }
 
 /* footer */
 .footer {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr min-content;
   margin: 181px 50px 0;
 }
 
 .footer__address {
-  width: 242px;
+  max-width: 210px;
+  word-spacing: 1px;
+}
+
+.footer__menu {
+  margin-left: -12px;
 }
 
 .footer__menu-list {
@@ -298,17 +328,16 @@ body {
 .footer__menu-link {
   font-size: 18px;
   font-weight: 400;
-  line-height: 21.13px;
+  line-height: 21px;
   text-transform: lowercase;
   text-underline-position: under;
 }
 
 .footer__social-list {
   display: flex;
-  justify-content: space-between;
+  column-gap: 49px;
   padding: 0;
   list-style: none;
-  width: 240px;
 }
 
 .footer__social-list-item {
